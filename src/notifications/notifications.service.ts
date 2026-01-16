@@ -2,12 +2,12 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class NotificationsService {
-  sendNotification(payload: any) {
-    console.log('Notification received:', payload);
+  async sendReport(email: string, fileBuffer: Buffer) {
+    console.log('Sending report to:', email);
+    console.log('File size:', fileBuffer.length);
 
     return {
-      status: 'sent',
-      timestamp: new Date(),
+      message: 'Report received and email triggered',
     };
   }
 }
